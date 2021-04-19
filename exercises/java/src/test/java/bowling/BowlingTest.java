@@ -7,14 +7,12 @@ public class BowlingTest {
     @Test
     public void whenAllZerosScoredThenReturnZero() {
         // Arrange
-        int expectedScore = 0;
-        int [] rolls = {0,0, 0,0, 0,0, 0,0, 0,0,
+        int[] rolls = new int[]{0,0, 0,0, 0,0, 0,0, 0,0,
                 0,0, 0,0, 0,0, 0,0, 0,0};
 
-        // Act
-        int outputScore = Bowling.calculateScoreFromRolls(rolls);
+        Bowling bowlingGame = new Bowling();
 
         // Assert
-        Assertions.assertThat(outputScore).isEqualTo(expectedScore);
+        Assertions.assertThat(bowlingGame.calculateScoreFromRolls(rolls)).isEqualTo(0);
     }
 }
