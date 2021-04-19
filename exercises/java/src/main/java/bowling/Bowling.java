@@ -1,17 +1,19 @@
 package bowling;
 
+import java.util.Arrays;
+
 public class Bowling {
     public int calculateScoreFromRolls(int[] rolls) {
         int score = 0;
 
-        for (int rollIndex = 0; rollIndex < rolls.length; rollIndex += 2) {
+        int rollIndex = 0;
+        for (int frame = 0; frame < 10; frame++) {
             int firstRoll = rolls[rollIndex];
             int secondRoll = rolls[rollIndex + 1];
 
+            score += firstRoll + secondRoll;
 
-
-            score += firstRoll;
-            score += secondRoll;
+            rollIndex += 2;
         }
 
         return score;
