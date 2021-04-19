@@ -30,7 +30,6 @@ public class BowlingTest {
     }
 
     @Test
-    @Ignore
     public void singleSpare() {
         // Arrange
         int[] rolls = new int[]{5,5, 1,0, 0,0, 0,0, 0,0,
@@ -40,5 +39,17 @@ public class BowlingTest {
 
         // Assert
         Assertions.assertThat(bowlingGame.calculateScoreFromRolls(rolls)).isEqualTo(12);
+    }
+
+    @Test
+    public void singleStrike() {
+        // Arrange
+        int[] rolls = new int[]{10, 1,1, 0,0, 0,0, 0,0,
+                0,0, 0,0, 0,0, 0,0, 0,0};
+
+        Bowling bowlingGame = new Bowling();
+
+        // Assert
+        Assertions.assertThat(bowlingGame.calculateScoreFromRolls(rolls)).isEqualTo(14);
     }
 }
